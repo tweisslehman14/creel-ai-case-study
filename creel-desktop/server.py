@@ -11,7 +11,10 @@ import mimetypes
 import os
 from pathlib import Path
 import secrets
+import signal
+import subprocess
 import threading
+import time
 from urllib.parse import urlsplit, parse_qs, unquote
 
 from store import Store, review_source_fingerprint
@@ -234,11 +237,42 @@ class Handler(BaseHTTPRequestHandler):
             self._json({'error':f'Nothing was confirmed. Creel could not finish: {exc}'},500)
 
 
+def _free_port(port):
+    """Kill a previous Creel server still holding this port, so a restart doesn't fail with 'Address already in use'."""
+    try:
+        pids = [int(p) for p in subprocess.run(
+            ['lsof','-ti', f'tcp:{port}'], capture_output=True, text=True, timeout=5
+        ).stdout.split()]
+    except (OSError, subprocess.SubprocessError):
+        return
+    for pid in pids:
+        if pid == os.getpid():
+            continue
+        try:
+            cmdline = subprocess.run(['ps','-p',str(pid),'-o','command='], capture_output=True, text=True, timeout=5).stdout
+        except (OSError, subprocess.SubprocessError):
+            continue
+        if 'server.py' not in cmdline:
+            continue
+        try:
+            os.kill(pid, signal.SIGTERM)
+        except ProcessLookupError:
+            continue
+        for _ in range(20):
+            time.sleep(0.1)
+            still = subprocess.run(['lsof','-ti', f'tcp:{port}'], capture_output=True, text=True, timeout=5).stdout.split()
+            if str(pid) not in still:
+                break
+        else:
+            try: os.kill(pid, signal.SIGKILL)
+            except ProcessLookupError: pass
+
 def main():
     parser = argparse.ArgumentParser(description='Run Creel privately on this Mac.')
     parser.add_argument('--port', type=int, default=8767)
     parser.add_argument('--data-dir',type=Path,default=Path(__file__).parent/'data')
     args = parser.parse_args()
+    _free_port(args.port)
     app = App(args.data_dir.expanduser().resolve())
     server = ThreadingHTTPServer(('127.0.0.1',args.port),Handler); server.app = app
     print(f'Creel is ready at http://127.0.0.1:{args.port} — keep this window open. Data: {args.data_dir}',flush=True)
