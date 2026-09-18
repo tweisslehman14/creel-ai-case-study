@@ -104,16 +104,4 @@ I would spend the next effort on evidence and field reliability rather than addi
 
 The most important open product question is whether the later retrieval value is high enough to sustain the capture habit. The prototype demonstrates a credible workflow; it does not yet prove long-term engagement or better fishing outcomes.
 
-## Five-minute Loom narrative
 
-**0:00–0:40 — Start with the user problem.** Show the original “Taking notes when fishing” thread and the related location/voice threads. Explain that anglers want memories and reusable context, but detailed logging becomes work. State the chosen user and the narrower hypothesis.
-
-**0:40–1:25 — Show how AI changed the framing.** Briefly show the broad research, inclusive use-case inventory, and critique of the initial all-in-one concept. Explain that I separated capture from retrieval and cut maps, gauges, and weather from the MVP.
-
-**1:25–2:25 — Show the product evolution.** Show the HTML concept, then the native phone flow: start a trip, add a short event, and export it. Explain why partial entries, original media, offline storage, and later editing mattered more than a large form.
-
-**2:25–3:35 — Demo the desktop and a real AI iteration.** Import the package, open the original entry, run local processing, and show a suggestion linked to its exact source. Explain that the first model output had invalid quote offsets and that “main run” was initially misclassified; show why proposals require review.
-
-**3:35–4:15 — Explain ongoing data.** Describe stable IDs and revisions, idempotent imports, and future independent OSM/USGS/weather enrichment with provider, time, units, distance, and provenance. Clearly label these integrations as proposed.
-
-**4:15–5:00 — Reflect.** Explain that AI accelerated research, critique, implementation, and testing, while my judgment set the user, scope, privacy model, trust requirements, and rejection criteria. Close with physical field testing and retrieval value as the next questions.
