@@ -12,7 +12,6 @@ This project was built for a Wrapbook AI usage case study. The goal was to start
 - **Research synthesis:** [fishing-notes-research.md](fishing-notes-research.md)
 - **AI process and iterations:** [process-log.md](process-log.md)
 - **Initial case-study answers:** [case-study-initial-answers.md](case-study-initial-answers.md)
-- **Five-minute Loom:** pending
 
 The Pages experience is a static, synthetic walkthrough for convenient review. The native phone capture and local desktop processing applications are the working implementation.
 
