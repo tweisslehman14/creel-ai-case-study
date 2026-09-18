@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Creel — Back from the water</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+<a href="/" class="brand" aria-label="Creel home"><svg viewBox="0 0 60 32" aria-hidden="true"><path d="M9 16C21 1 39 1 51 16 39 31 21 31 9 16ZM9 16 1 6v20L9 16Zm18-10 6-5 5 5m-11 20 6 5 5-5"/><circle cx="41" cy="13" r="1.5"/></svg><span>creel</span></a>
+<p class="brand-note">A little now.<br>A memory for later.</p>
+<nav aria-label="Main navigation"><button class="nav-item active" id="nav-library"><span>▤</span> Your journal</button><button class="nav-item" id="nav-processing"><span>✧</span> Processing</button><button class="nav-item" id="nav-backup"><span>↗</span> Keep a copy</button></nav>
+<div class="sidebar-bottom"><span class="local-dot"></span> Private on this Mac<p>Your originals stay yours.<br>No account. No automatic uploads.</p><a href="#" id="about-link">About this prototype ↗</a></div>
+</aside>
+<main>
+<header class="topbar"><span id="breadcrumb">YOUR JOURNAL</span><div><span class="local-pill">● Local library</span><button class="primary small" id="import-top">＋ Import a trip</button></div></header>
+<section id="library-view" class="view">
+<div class="page-heading"><div><p class="eyebrow">BACK FROM THE WATER</p><h1>Every trip has a story.</h1><p class="lede">Keep the moments. Find the patterns. Remember the good parts.</p></div><div class="library-tally" id="library-tally"></div></div>
+<div class="search-row"><label class="searchbox"><span>⌕</span><input id="search" type="search" placeholder="Search a river, a fly, a fleeting thought…" aria-label="Search your journal"></label><button class="secondary" id="filters-toggle" aria-expanded="false">Filters <span>☷</span></button></div>
+<div class="filters hidden" id="filters"><label>Waterbody<input id="filter-water" placeholder="Any river or lake"></label><label>Moment type<select id="filter-kind"><option value="">All moments</option><option value="catchFish">Catch</option><option value="observation">Observation</option><option value="contextChange">Context change</option><option value="journal">Journal / debrief</option><option value="unclassified">Unclassified</option></select></label><label>From<input id="filter-from" type="date"></label><label>Through<input id="filter-to" type="date"></label><button class="text-button" id="clear-filters">Clear</button></div>
+<div class="section-line"><h2 id="library-heading">Your trips</h2><span id="result-note">Originals, always close at hand.</span></div>
+<div id="trips" class="trip-grid" aria-live="polite"></div>
+<div id="empty" class="empty hidden"><div class="empty-art"><svg viewBox="0 0 300 150" aria-hidden="true"><path d="M20 110q35-18 70 0t70 0t70 0t50 0M35 125q30-15 60 0t60 0t60 0t60 0" class="water"/><path d="M82 65q55-60 125 0-65 60-125 0Zm0 0L54 38v54Zm44-30 17-17 17 13m-29 67 17 20 17-20" class="fish"/><circle cx="181" cy="58" r="4"/><path d="M163 41q-13 24 0 46" class="gill"/></svg></div><p class="eyebrow">A PLACE FOR WHAT YOU NOTICED</p><h2>Your journal starts at the water.</h2><p>Bring over a trip from your phone. Photos, voice notes and half-finished thoughts are all welcome.</p><button class="primary" id="import-empty">Import your first trip <span>↗</span></button><span class="hint">Choose a .fishing-trip.zip file exported from Creel.</span></div>
+</section>
+<section id="trip-view" class="view hidden"><div id="trip-content"></div></section>
+<section id="processing-view" class="view hidden"><div class="page-heading"><div><p class="eyebrow">YOUR WORDS, A LITTLE EASIER TO FIND</p><h1>Make room for the details.</h1><p class="lede">Originals first. Optional processing, only when you ask.</p></div></div><div id="processing-content"></div></section>
+<section id="backup-view" class="view hidden"><div class="page-heading"><div><p class="eyebrow">BEYOND THIS MAC</p><h1>Keep a copy.</h1><p class="lede">A local library is a home for your memories. A backup is another place to keep them.</p></div></div><div class="two-columns"><article class="panel"><div class="panel-icon">↗</div><h2>Everything, together.</h2><p>Save a desktop archive with original phone packages, media, transcripts, AI proposals and your corrections.</p><button class="primary" id="backup-create">Create a library backup</button><div id="backup-result" role="status"></div></article><article class="panel"><div class="panel-icon">↙</div><h2>Bring a library back.</h2><p>Restore a Creel desktop backup into an empty library. Existing journals are never silently replaced.</p><button class="secondary" id="restore-open">Choose a backup</button><p class="hint">This is different from importing a phone trip.</p></article></div></section>
+<footer>Collected on the water. Kept for you.<span>CREEL · DESKTOP JOURNAL</span></footer>
+</main>
+</div>
+<input type="file" id="import-file" accept=".zip,application/zip" hidden><input type="file" id="restore-file" accept=".zip,application/zip" hidden>
+<dialog id="modal"><div id="modal-content"></div></dialog>
+<div id="toast" class="toast hidden" role="status"></div>
+<script src="/app.js"></script>
+</body></html>
