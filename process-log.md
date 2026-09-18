@@ -121,3 +121,10 @@ For each meaningful iteration, append:
 - Tom reported that both the simulator app and desktop experience were working after his hands-on test.
 - He created a trip and generated an export in the iOS Simulator. The export was present in the app's Application Support `Creel/exports` directory; troubleshooting corrected an initially incomplete retrieval path and made the `.fishing-trip.zip` accessible in Finder.
 - This is user-reported simulator validation. It does not replace the remaining physical-device and field-audio acceptance work.
+
+### Public reviewer package — September 18, 2026
+
+- Published the source and evaluator-facing README at https://github.com/tweisslehman14/creel-ai-case-study.
+- Published a responsive, interactive, synthetic walkthrough at https://tweisslehman14.github.io/creel-ai-case-study/. It explicitly does not claim to run the native capture, Python service, or local AI models in the browser.
+- Published a curated `creel-demo-v1.0.0.zip` through GitHub Releases. It contains the phone app, desktop app, synthetic samples, and quick-start documentation; local models and personal journal data are excluded.
+- Verified the release from a clean extraction: 8 Swift core tests and 38 desktop tests passed. Release SHA-256: `d63328a60ee1bbc6b7bf7acec9750b0c9ac44aa6a7cdb3f4babd7b54cefcf71e`.

@@ -23,14 +23,16 @@ The first stage is a native iPhone app for low-friction field capture. A user st
 
 The second stage is a local desktop journal. It imports the trip package, preserves the phone originals, transcribes audio with a local Whisper model, and uses a local language model to suggest structured facts such as species, fly, or reported place. Suggestions remain proposals until the user accepts or corrects them. The user can also add desktop notes, search the journal, and create a backup.
 
-The working solution currently runs locally:
+The working solution is available publicly, with the real processing applications running locally:
 
+- Reviewer walkthrough: [https://tweisslehman14.github.io/creel-ai-case-study/](https://tweisslehman14.github.io/creel-ai-case-study/)
+- Public source: [https://github.com/tweisslehman14/creel-ai-case-study](https://github.com/tweisslehman14/creel-ai-case-study)
+- Downloadable package: [Creel case-study demo v1.0.0](https://github.com/tweisslehman14/creel-ai-case-study/releases/tag/v1.0.0)
 - iPhone app: [Xcode project and run instructions](creel-ios/README.md)
-- Desktop app: [desktop instructions](creel-desktop/README.md), running on this Mac at [http://127.0.0.1:8767](http://127.0.0.1:8767)
+- Desktop app: [desktop instructions](creel-desktop/README.md)
 - Original visual prototype: [Creel — Phone Capture MVP.html](Creel%20-%20Phone%20Capture%20MVP.html)
-- Public reviewer-accessible build or downloadable package: **pending before submission**
 
-The phone and desktop experiences are working in the iOS Simulator and local browser. Eight phone-core tests and 38 desktop tests pass. I also verified a synthetic audio round trip through the actual phone exporter, desktop import, local transcription, local extraction, search, backup, and restore. Real field audio and physical-device behavior still need validation.
+The phone and desktop experiences are working in the iOS Simulator and local browser. Eight phone-core tests and 38 desktop tests pass, including reruns from the clean downloadable archive. I also verified a synthetic audio round trip through the actual phone exporter, desktop import, local transcription, local extraction, search, backup, and restore. Real field audio and physical-device behavior still need validation.
 
 ## How did I use AI?
 
@@ -115,4 +117,3 @@ The most important open product question is whether the later retrieval value is
 **3:35–4:15 — Explain ongoing data.** Describe stable IDs and revisions, idempotent imports, and future independent OSM/USGS/weather enrichment with provider, time, units, distance, and provenance. Clearly label these integrations as proposed.
 
 **4:15–5:00 — Reflect.** Explain that AI accelerated research, critique, implementation, and testing, while my judgment set the user, scope, privacy model, trust requirements, and rejection criteria. Close with physical field testing and retrieval value as the next questions.
-

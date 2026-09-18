@@ -7,6 +7,7 @@ This project was built for a Wrapbook AI usage case study. The goal was to start
 ## Explore the case study
 
 - **Interactive walkthrough:** [Creel on GitHub Pages](https://tweisslehman14.github.io/creel-ai-case-study/)
+- **Downloadable demo package:** [Creel case-study demo v1.0.0](https://github.com/tweisslehman14/creel-ai-case-study/releases/tag/v1.0.0)
 - **Starting Reddit thread:** [Taking notes when fishing](https://www.reddit.com/r/flyfishing/comments/19cjde8/taking_notes_when_fishing/)
 - **Research synthesis:** [fishing-notes-research.md](fishing-notes-research.md)
 - **AI process and iterations:** [process-log.md](process-log.md)
@@ -45,6 +46,8 @@ python3 server.py
 ```
 
 Open the printed local URL and import one of the clearly labeled packages in [`creel-desktop/samples/`](creel-desktop/samples/). Local model installation is optional; see the [desktop instructions](creel-desktop/README.md).
+
+For a curated download containing both applications, synthetic samples, and quick-start instructions, use the [v1.0.0 release](https://github.com/tweisslehman14/creel-ai-case-study/releases/tag/v1.0.0).
 
 ## How AI changed the product
 
