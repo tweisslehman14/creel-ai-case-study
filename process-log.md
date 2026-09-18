@@ -2,12 +2,6 @@
 
 Record work as it happens. Empty sections are prompts for later documentation, not completed work.
 
-## Timing
-
-- Start:
-- Finish:
-- Elapsed time and any interruptions:
-
 ## Discovery and selection
 
 September 17, 2026, requirements: Tom split the product into offline phone capture and desktop processing/review/recall. At his request, created requirements-and-development-plan.md with a versioned export contract, phased implementation gates, privacy constraints and acceptance scenarios. External enrichment is proposed as a follow-on phase; technical defaults remain subject to device/provider verification. No implementation started.
